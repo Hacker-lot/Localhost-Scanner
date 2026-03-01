@@ -1,0 +1,20 @@
+{
+  "portRanges": [
+    [
+      3000,
+      9999
+    ]
+  ],
+  "scanInterval": 5000,
+  "favorites": {
+    "ports": [
+      {
+        "port": 5173,
+        "name": "node.exe",
+        "notes": "",
+        "addedAt": "2026-03-01T12:48:17.803Z"
+      }
+    ],
+    "folders": []
+  }
+}

@@ -1,0 +1,367 @@
+/* PortCard.css - Professional Theme */
+
+.port-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.port-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent-purple));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.port-card:hover::before {
+  opacity: 1;
+}
+
+.port-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.port-card.expanded {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.port-card.expanded::before {
+  opacity: 1;
+}
+
+/* Accent Colors for Port Cards */
+.port-card.accent-orange::before {
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-red));
+}
+
+.port-card.accent-red::before {
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-blue));
+}
+
+.port-card.accent-blue::before {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-teal));
+}
+
+.port-card.accent-teal::before {
+  background: linear-gradient(90deg, var(--accent-teal), var(--accent-pink));
+}
+
+.port-card.accent-pink::before {
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-orange));
+}
+
+.port-card.accent-orange:hover {
+  border-color: var(--accent-orange);
+  box-shadow: var(--shadow-orange);
+}
+
+.port-card.accent-red:hover {
+  border-color: var(--accent-red);
+  box-shadow: var(--shadow-red);
+}
+
+.port-card.accent-blue:hover {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-blue);
+}
+
+.port-card.accent-teal:hover {
+  border-color: var(--accent-teal);
+}
+
+.port-card.accent-pink:hover {
+  border-color: var(--accent-pink);
+}
+
+.port-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.port-card-main-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.port-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.port-process-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1 1 auto;
+  min-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-sans);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  white-space: nowrap;
+  min-width: 70px;
+}
+
+.status-badge::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.status-running {
+  background-color: var(--success-light);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.status-running::before {
+  background-color: var(--success);
+}
+
+.status-stopped {
+  background-color: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.status-stopped::before {
+  background-color: var(--danger);
+}
+
+.status-listening {
+  background-color: var(--info-light);
+  color: var(--info);
+  border: 1px solid var(--info);
+}
+
+.status-listening::before {
+  background-color: var(--info);
+}
+
+.port-card-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
+}
+
+.favorite-btn:hover {
+  background-color: var(--warning-light);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.favorite-btn.favorited {
+  background-color: var(--warning-light);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.favorite-btn.loading {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.favorite-btn.loading:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.open-folder-btn:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.close-btn:hover {
+  background-color: var(--danger-light);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.port-card-details {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.port-card.expanded .port-card-details {
+  max-height: 200px;
+  opacity: 1;
+  border-top-color: var(--primary);
+}
+
+.detail-row {
+  display: flex;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 140px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.command-text,
+.cwd-text {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background-color: var(--bg-secondary);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.command-text::before {
+  content: '$ ';
+  color: var(--success);
+  font-weight: 600;
+}
+
+.cwd-text::before {
+  content: '📁 ';
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .port-card {
+    padding: 12px;
+  }
+
+  .port-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .port-card-main-info {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .port-card-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .port-number {
+    font-size: 1.125rem;
+  }
+
+  .port-process-name {
+    font-size: 0.875rem;
+    min-width: 60px;
+  }
+
+  .detail-label {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .port-card-main-info {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .port-process-name {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .action-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .status-badge {
+    font-size: 0.625rem;
+    padding: 3px 6px;
+  }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortCard CSS Test</title>
+    <link rel="stylesheet" href="client/src/components/PortCard.css">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --primary: #4a90e2;
+            --accent-blue: #50c8ff;
+            --accent-purple: #9b59b6;
+            --accent-orange: #f39c12;
+            --accent-red: #e74c3c;
+            --accent-teal: #1abc9c;
+            --accent-pink: #e91e63;
+            --success: #2ecc71;
+            --success-light: #d5f5e3;
+            --danger: #e74c3c;
+            --danger-light: #fadbd8;
+            --info: #3498db;
+            --info-light: #d6eaf8;
+            --warning: #f39c12;
+            --warning-light: #fdebd0;
+            --border-color: #e0e0e0;
+            --radius: 4px;
+            --radius-md: 8px;
+            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
+            --shadow-orange: 0 4px 12px rgba(243, 156, 18, 0.3);
+            --shadow-red: 0 4px 12px rgba(231, 76, 60, 0.3);
+            --shadow-blue: 0 4px 12px rgba(74, 144, 226, 0.3);
+            --transition: all 0.3s ease;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            --font-mono: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .test-section {
+            margin-bottom: 40px;
+        }
+
+        .test-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .test-description {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>PortCard CSS Test</h1>
+
+        <div class="test-section">
+            <h2 class="test-title">Test 1: Normal Process Name</h2>
+            <p class="test-description">This should display normally without any truncation.</p>
+            <div class="port-card">
+                <div class="port-card-header">
+                    <div class="port-card-main-info">
+                        <span class="port-number">:3000</span>
+                        <span class="port-process-name" title="node">node</span>
+                        <span class="status-badge status-running">running</span>
+                    </div>
+                    <div class="port-card-actions">
+                        <button class="action-btn favorite-btn" title="Add to favorites">☆</button>
+                        <button class="action-btn open-folder-btn" title="Open folder">📁</button>
+                        <button class="action-btn close-btn" title="Close port">✕</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2 class="test-title">Test 2: Long Process Name</h2>
+            <p class="test-description">This should truncate with ellipsis and show full name on hover.</p>
+            <div class="port-card">
+                <div class="port-card-header">
+                    <div class="port-card-main-info">
+                        <span class="port-number">:8080</span>
+                        <span class="port-process-name" title="very-long-process-name-that-should-be-truncated">very-long-process-name-that-should-be-truncated</span>
+                        <span class="status-badge status-running">running</span>
+                    </div>
+                    <div class="port-card-actions">
+                        <button class="action-btn favorite-btn" title="Add to favorites">☆</button>
+                        <button class="action-btn open-folder-btn" title="Open folder">📁</button>
+                        <button class="action-btn close-btn" title="Close port">✕</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2 class="test-title">Test 3: Very Long Process Name</h2>
+            <p class="test-description">This should truncate significantly with ellipsis and show full name on hover.</p>
+            <div class="port-card">
+                <div class="port-card-header">
+                    <div class="port-card-main-info">
+                        <span class="port-number">:5000</span>
+                        <span class="port-process-name" title="this-is-an-extremely-long-process-name-that-definitely-should-be-truncated-with-ellipsis-and-should-not-push-the-action-buttons-out-of-the-card">this-is-an-extremely-long-process-name-that-definitely-should-be-truncated-with-ellipsis-and-should-not-push-the-action-buttons-out-of-the-card</span>
+                        <span class="status-badge status-listening">listening</span>
+                    </div>
+                    <div class="port-card-actions">
+                        <button class="action-btn favorite-btn" title="Add to favorites">☆</button>
+                        <button class="action-btn open-folder-btn" title="Open folder">📁</button>
+                        <button class="action-btn close-btn" title="Close port">✕</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2 class="test-title">Test 4: Multiple Cards with Different Lengths</h2>
+            <p class="test-description">All cards should maintain proper layout regardless of process name length.</p>
+            <div class="port-card" style="margin-bottom: 15px;">
+                <div class="port-card-header">
+                    <div class="port-card-main-info">
+                        <span class="port-number">:3001</span>
+                        <span class="port-process-name" title="short">short</span>
+                        <span class="status-badge status-running">running</span>
+                    </div>
+                    <div class="port-card-actions">
+                        <button class="action-btn favorite-btn" title="Add to favorites">☆</button>
+                        <button class="action-btn open-folder-btn" title="Open folder">📁</button>
+                        <button class="action-btn close-btn" title="Close port">✕</button>
+                    </div>
+                </div>
+            </div>
+            <div class="port-card" style="margin-bottom: 15px;">
+                <div class="port-card-header">
+                    <div class="port-card-main-info">
+                        <span class="port-number">:3002</span>
+                        <span class="port-process-name" title="medium-length-process-name">medium-length-process-name</span>
+                        <span class="status-badge status-stopped">stopped</span>
+                    </div>
+                    <div class="port-card-actions">
+                        <button class="action-btn favorite-btn" title="Add to favorites">☆</button>
+                        <button class="action-btn open-folder-btn" title="Open folder">📁</button>
+                        <button class="action-btn close-btn" title="Close port">✕</button>
+                    </div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-card-header">
+                    <div class="port-card-main-info">
+                        <span class="port-number">:3003</span>
+                        <span class="port-process-name" title="another-very-long-process-name-that-needs-to-be-truncated-properly-without-breaking-the-layout">another-very-long-process-name-that-needs-to-be-truncated-properly-without-breaking-the-layout</span>
+                        <span class="status-badge status-running">running</span>
+                    </div>
+                    <div class="port-card-actions">
+                        <button class="action-btn favorite-btn" title="Add to favorites">☆</button>
+                        <button class="action-btn open-folder-btn" title="Open folder">📁</button>
+                        <button class="action-btn close-btn" title="Close port">✕</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
