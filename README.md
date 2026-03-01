@@ -1,6 +1,34 @@
 # Localhost Scanner
 
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-green?style=flat)
+![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen?style=flat)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20Mac-blue?style=flat)
+![React](https://img.shields.io/badge/React-18.0.0-black?style=flat&logo=react)
+![Express](https://img.shields.io/badge/Express-4.18.2-white?style=flat&logo=express)
+![Vite](https://img.shields.io/badge/Vite-5.0.0-purple?style=flat&logo=vite)
+![GitHub Stars](https://img.shields.io/github/stars/anomalyco/localhost-scanner?style=social)
+
+![Localhost Scanner Screenshot](index_page.png)
+
 A web app for developers to scan, manage, and launch localhost development servers. Never wonder what ports you have open again.
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/localhost-scanner.git
+cd localhost_scanner
+
+# Install dependencies
+npm install
+cd client && npm install && cd ..
+
+# Start the app
+npm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173) to start scanning your ports!
 
 ---
 
@@ -52,38 +80,38 @@ If you're like most developers, you probably have multiple dev servers running o
 
 This app scans localhost for open ports and shows you what's running on each one. You can see the process name, PID, and working directory. You can close ports, save your favorites, and even launch npm scripts from your project folders.
 
-### Features
+### ✨ Features
 
-**Find Open Ports**
+![Feature Badge](https://img.shields.io/badge/Find-Open_Ports-orange?style=flat)
 - Scans localhost for open ports (you choose the range)
 - Shows process details: PID, name, command, working directory
 - Auto-refreshes every 5 seconds via WebSocket
 - Search and filter results
 
-**Manage Processes**
+![Feature Badge](https://img.shields.io/badge/Manage_Processes-red?style=flat)
 - Close/kill processes with one click
 - Works on Windows, Linux, and Mac
 - Asks you to confirm before killing anything
 - Shows live connection status
 
-**Save Favorites**
+![Feature Badge](https://img.shields.io/badge/Save_Favorites-yellow?style=flat)
 - Mark frequently used ports as favorites
 - Save your project folders for quick access
 - Everything saves to `config.json`
 
-**Quick Launch**
+![Feature Badge](https://img.shields.io/badge/Quick_Launch-blue?style=flat)
 - Launch npm scripts from your favorite folders
 - Watch terminal output in real-time
 - Supports `dev`, `start`, `build`, and `test` scripts
 
-**Customize**
+![Feature Badge](https://img.shields.io/badge/Customize-purple?style=flat)
 - Choose which port ranges to scan
 - Set how often to auto-scan
 - Switch between light and dark themes
 
 ---
 
-## How to Use It
+## 📖 How to Use It
 
 ### Scanning Ports
 
@@ -116,7 +144,7 @@ Click the gear (⚙️) icon to:
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 localhost_scanner/
@@ -148,7 +176,10 @@ localhost_scanner/
 
 ---
 
-## API Reference
+## 📡 API Reference
+
+![API](https://img.shields.io/badge/API-RESTful-success?style=flat)
+![WebSocket](https://img.shields.io/badge/WebSocket-Real--time-informational?style=flat)
 
 ### REST Endpoints
 
@@ -176,7 +207,7 @@ localhost_scanner/
 
 ---
 
-## Things to Know
+## ⚠️ Things to Know
 
 ### Limitations
 
@@ -193,23 +224,25 @@ localhost_scanner/
 
 ---
 
-## Technology Stack
+## 🛠 Technology Stack
 
-**Backend:**
-- Node.js
-- Express
-- WebSocket (ws package for real-time communication)
-- CORS
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)
+![WebSocket](https://img.shields.io/badge/WebSocket-010101?style=flat&logo=wifi&logoColor=white)
+![CORS](https://img.shields.io/badge/CORS-4285F4?style=flat)
 
-**Frontend:**
-- React 18
-- Vite (build tool and dev server)
-- Custom hooks for state management
-- CSS Variables for theming
+### Frontend
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![Hooks](https://img.shields.io/badge/Hooks-20232A?style=flat&logo=react&logoColor=61DAFB)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white)
 
 ---
 
-## Configuration
+## ⚙️ Configuration
+
+![Config](https://img.shields.io/badge/Config-JSON-important?style=flat)
 
 Edit `config.json` to customize:
 
@@ -230,7 +263,9 @@ Edit `config.json` to customize:
 
 ---
 
-## License
+## 📄 License
+
+![MIT License](https://img.shields.io/badge/License-MIT-blue?style=flat)
 
 MIT
 
